@@ -3,7 +3,14 @@ This project was made for [CruzHack's frontend technical challenge](https://gith
 
 
 ## Running the project
-To run, simply clone this repo in your preferred directory:
+To start, simply clone this repo in your preferred directory:
 ```
-git clone 
+git clone https://github.com/bjma/cruzhacks-event-dashboard
 ```
+
+To run the project, run `npm` in the project directory:
+```
+npm start
+```
+
+Now, you should be able to view the project on `https://localhost/3000`
