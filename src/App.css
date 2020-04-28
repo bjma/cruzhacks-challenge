@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -37,8 +35,12 @@
   }
 }
 
-input {
-    display: inline-block;     
+Form {
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 90%;
 }
 
-
+Form.Control {
+    width: 50% !important;
+}
