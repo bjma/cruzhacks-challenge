@@ -1,7 +1,7 @@
 import React from 'react'
 import FormDemographics from './FormDemographics'
 
-class FormMain extends React.Component {
+class Form extends React.Component {
     state = {
         currentPage: 1,
         firstName: '',
@@ -74,4 +74,4 @@ class FormMain extends React.Component {
     }
 }
 
-export default FormMain
+export default Form

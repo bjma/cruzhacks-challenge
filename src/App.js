@@ -1,12 +1,12 @@
 import React from 'react';
-import FormMain from './components/FormMain'
+import Form from './components/Form'
 import './App.css';
 
 class App extends React.Component {
     render() {
         return (
             <div className='App'>
-                <FormMain />
+                <Form />
             </div>
         )
     }

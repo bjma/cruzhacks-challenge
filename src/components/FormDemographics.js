@@ -1,75 +1,60 @@
 import React from 'react';
-import { Form, Row, Col } from 'react-bootstrap'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { AppBar, TextField, RaisedButton } from 'material-ui'
+import { RadioGroup } from '@material-ui/core';
+import App from '../App';
 
 class FormDemographics extends React.Component {
     continue = e => {
         e.preventDefault();
         this.props.nextPage();
     }
-    /*
-    <h1>Demographics</h1>
-                <form>
-                    <label>First Name</label>
-                                <input 
-                                    type = "text"
-                                    onChange = { this.props.handleChange('firstName') }
-                                    defaultValue = { this.props.firstName }
-                                />
-                </form>
-                */
 
     render() {
         return (
-            <div className="form">
-                <Form class='form-inline'>
-                    <h1>Demographics</h1>
-                    <Form.Group as={Row} controlId='nameInfo'>
-                        <Col>
-                            <Form.Label>First Name</Form.Label>
-                            <Form.Control 
-                                type="text"
-                                onChange={this.props.handleChange('firstName')}
-                                defaultValue={this.props.firstName}
-                            />
-                        </Col>
-                        <Col>
-                            <Form.Label>Last Name</Form.Label>
-                            <Form.Control 
-                                type="text"
-                                onChange={this.props.handleChange('lastName')}
-                                defaultValue={this.props.lastName}
-                            />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="bioInfo">
-                        <Col>
-                            <Form.Label>Age</Form.Label>
-                            <Form.Control
-                                type="number"
-                                onChange={this.props.handleChange('age')}
-                                defaultValue={this.props.age}
-                            />
-                        </Col>
-                        <Col>
-                            <Form.Label>Gender</Form.Label>
-                            {['radio'].map((type) => (
-                                <div key={`inline-${type}`} className="mb-3" style={{display:inlineBlock}}>
-                                    <Form.Check inline label="Female" type={type} id={`inline-${type}-1`} />
-                                    <Form.Check inline label="Male" type={type} id={`inline-${type}-2`} />
-                                    <Form.Check inline label="Trans" type={type} id={`inline-${type}-2`} />
-                                    <Form.Check inline label="Non-binary" type={type} id={`inline-${type}-2`} />
-                                    <Form.Label>Other</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        onChange={this.props.gender}
-                                    />
-                                </div>
-                            ))}
-                        </Col>
-                    </Form.Group>
-                </Form>
-            </div>
+            <MuiThemeProvider>
+                <React.Fragment>
+                    <AppBar title='Application' />
+                    <h1 className='page-header'>Demographics</h1>
+                    <TextField 
+                        className='input-fields'
+                        floatingLabelText='First Name'
+                        onChange={ this.props.handleChange('firstName') }
+                        defaultValue={this.props.firstName}
+                    />
+                    <TextField 
+                        className='input-fields'
+                        floatingLabelText='Last Name'
+                        onChange={ this.props.handleChange('lastName') }
+                        defaultValue={this.props.lastName}
+                    />
+                    <br/>
+                    <TextField 
+                        className='input-fields'
+                        type='number'
+                        floatingLabelText='Age'
+                        onChange={ this.props.handleChange('age') }
+                        defaultValue={this.props.age}
+                    />
+                    <RadioGroup floatingLabelText='Gender' onChange={this.props.handleChange('gender')}>
+                        
+                    </RadioGroup>
+                    <br/>
+                    <RaisedButton 
+                        label='Next'
+                        primary={ true }
+                        style={ styles.button }
+                        onClick={this.continue}
+                    />
+                </React.Fragment>
+            </MuiThemeProvider>
         )
+    }
+}
+
+const styles = {
+    button: {
+        margin: 15
     }
 }
 

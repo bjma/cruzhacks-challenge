@@ -41,6 +41,13 @@ Form {
     width: 90%;
 }
 
-Form.Control {
-    width: 50% !important;
+.input-fields {
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+.page-header {
+    margin-top: 30px; 
+    margin-left: 20px;  
+    font-size: 32px; 
 }
