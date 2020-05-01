@@ -56,7 +56,6 @@ class FormLogistics extends React.Component {
                         label='Submit'
                         primary={ true }
                         style={ styles.button }
-                        onClick={this.continue}
                     />
                 </React.Fragment>
             </MuiThemeProvider>
