@@ -1,5 +1,7 @@
 import React from 'react'
 import FormDemographics from './FormDemographics'
+import FormExperience from './FormExperience'
+import FormLogistics from './FormLogistics'
 
 class Form extends React.Component {
     state = {
@@ -53,9 +55,9 @@ class Form extends React.Component {
             case 1:
                 return (
                     <FormDemographics 
-                        nextPage= { this.nextPage }
-                        handleChange = { this.handleChange }
-                        values = { this.demoValues } 
+                        nextPage={ this.nextPage }
+                        handleChange={ this.handleChange }
+                        values={ this.demoValues } 
                     />)
             case 2:
                 return (
@@ -65,10 +67,22 @@ class Form extends React.Component {
                         handleChange = { this.handleChange }
                         values = { this.expValues }
                     />)*/
-                    <h1>Experience</h1>
+                    <FormExperience 
+                        nextPage={ this.nextPage }
+                        prevPage={ this.prevPage }
+                        handleChange={ this.handleChange }
+                        values={ this.expValues }
+                    />
                 )
             case 3:
-                return <h1>Logistics</h1>
+                return (
+                    <FormLogistics
+                        nextPage={ this.nextPage }
+                        prevPage={ this.prevPage }
+                        handleChange={ this.handleChange }
+                        values={ this.logValues }
+                    />
+                )
         }
 
     }

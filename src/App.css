@@ -44,6 +44,7 @@ Form {
 .input-fields {
     margin-left: 20px;
     margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 .page-header {
@@ -56,4 +57,9 @@ Form {
 .legends {
     margin-left: 16px;
     margin-bottom: 5px;
+}
+
+.application-header {
+    background: #6D49FF;
+    color: #FFFF;
 }

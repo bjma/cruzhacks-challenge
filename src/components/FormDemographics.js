@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { AppBar, TextField, RaisedButton } from 'material-ui'
 import { RadioGroup, Radio } from '@material-ui/core';
 import { FormControl, FormControlLabel, FormLabel } from '@material-ui/core'
-import App from '../App';
+import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
 class FormDemographics extends React.Component {
     constructor(props) {
@@ -19,7 +19,9 @@ class FormDemographics extends React.Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
-                    <AppBar title='Application' />
+                    <Toolbar className='application-header'>
+                        <ToolbarTitle text='Application'/>
+                    </Toolbar>
                     <h1 className='page-header'>Demographics</h1>
                     <TextField 
                         required
