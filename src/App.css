@@ -1,4 +1,6 @@
-
+html, body {
+    overflow-x: hidden;
+}
 
 .App-logo {
   height: 40vmin;
@@ -86,4 +88,47 @@ Form {
     font-size: x-large;
     margin-top: 54px;
     margin-left: 78px;
+}
+
+
+.announcement-title {
+    text-align: center;
+    color: #6D49FF;
+}
+
+.events-wrapper {
+    display: inline-block;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 20px;
+    padding-left: 100px;
+    padding-top: 12px;
+}
+
+.event-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 275px;
+  height: 100px;
+  padding-top: 10px;
+  text-align: center;
+  border: 1px solid #6D49FF;
+  border-radius: 5px;
+  color: #6D49FF;
+  margin-left: 15px;
+}
+
+.card-container {
+    padding: 2px 16px;
+}
+
+.card-row {
+    margin: 0 auto;
+    max-width: 5000px;
+    width: 100%;
+}
+
+.card-column {
+    float: left;
+    padding: 0 15px;
 }

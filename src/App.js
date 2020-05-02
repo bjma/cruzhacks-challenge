@@ -12,7 +12,9 @@ class App extends React.Component {
     render() {
         return (
             <div className='App'>
-                <Announcements />
+                <div style={{height: "200px"}}>
+                    <Announcements />
+                </div>
                 <AppHeader />
                 <Form />
             </div>

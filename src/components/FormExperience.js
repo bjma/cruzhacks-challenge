@@ -28,7 +28,7 @@ class FormExperience extends React.Component {
                     <br/>
                     <div className='row'>
                         <div className='driver-wrapper'>
-                            <FormControl component='fieldset'>
+                            <FormControl component='fieldset' required>
                                 <FormLabel component='legend' className='legends'>First Hackathon?</FormLabel>
                                 <RadioGroup row required className='group-wrapper' defaultValue={ this.props.isStudent } onChange= { this.handleCheck }>
                                     <FormControlLabel value="yes" control={<Radio />} label="Yes" labelPlacement='start'/>

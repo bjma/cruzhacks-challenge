@@ -28,7 +28,7 @@ class FormLogistics extends React.Component {
                     <br/>
                     <div className='row'>
                         <div className='driver-wrapper'>
-                            <FormControl component='fieldset'>
+                            <FormControl component='fieldset' required>
                                 <FormLabel component='legend' className='legends'>Could you use help with transporation?</FormLabel>
                                 <RadioGroup row required className='group-wrapper' defaultValue={ this.props.canDrive } onChange= { this.props.handleChange('canDrive') }>
                                     <FormControlLabel value="yes" control={<Radio />} label="Yes" labelPlacement='start'/>
@@ -53,9 +53,8 @@ class FormLogistics extends React.Component {
                         onClick={this.return}
                     />
                     <RaisedButton 
-                        label='Next'
+                        label='Submit'
                         style={ styles.button }
-                        onClick={this.continue}
                     />
                 </React.Fragment>
             </MuiThemeProvider>

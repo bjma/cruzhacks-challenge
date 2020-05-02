@@ -63,7 +63,7 @@ class FormDemographics extends React.Component {
                             style={{width: 80}}
                         />
                         <div className='radio-wrapper'>
-                            <FormControl component='fieldset'>
+                            <FormControl component='fieldset' required>
                                 <FormLabel component='legend'>Gender</FormLabel>
                                 <RadioGroup row required className='group-wrapper' defaultValue={ this.props.gender } onChange= { this.props.handleChange('gender') }>
                                     <FormControlLabel value="female" control={<Radio />} label="Female" labelPlacement='start'/>
@@ -86,7 +86,7 @@ class FormDemographics extends React.Component {
                             style={{width: 160}}
                         />
                         <div className='student-wrapper'>
-                            <FormControl component='fieldset'>
+                            <FormControl component='fieldset' required>
                                 <FormLabel component='legend' className='legends'>UCSC Student?</FormLabel>
                                 <RadioGroup row required className='group-wrapper' defaultValue={ this.props.isStudent } onChange= { this.handleCheck }>
                                     <FormControlLabel value="yes" control={<Radio />} label="Yes" labelPlacement='start'/>
@@ -96,7 +96,7 @@ class FormDemographics extends React.Component {
                         </div>
                         { this.state.showComponent && (
                              <div className='ca-wrapper'>
-                                 <FormControl >
+                                 <FormControl required>
                                     <InputLabel>College Affiliation</InputLabel>
                                     <Select
                                         onChange={ this.props.handleChange('collegeAffiliation ')}
