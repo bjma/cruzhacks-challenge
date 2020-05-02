@@ -11,7 +11,7 @@ class Form extends React.Component {
         age: 0,
         gender: '',
         gradYear: 0,
-        isStudent: false,
+        isStudent: 'no',
         collegeAffiliation: '',
         isFirstTimer: false,
         hackerStatement: '',
@@ -39,6 +39,7 @@ class Form extends React.Component {
     handleChange = input => e => {
         // Set current input state of field to event 
         this.setState({[input]: e.target.value});
+        console.log(this.state)
     }
 
     render() {
@@ -58,6 +59,7 @@ class Form extends React.Component {
                         nextPage={ this.nextPage }
                         handleChange={ this.handleChange }
                         values={ this.demoValues } 
+                        renderCA={ false }
                     />)
             case 2:
                 return (

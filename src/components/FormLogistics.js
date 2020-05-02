@@ -27,7 +27,7 @@ class FormLogistics extends React.Component {
                     <Toolbar className='application-header'>
                         <ToolbarTitle text='Application'/>
                     </Toolbar>
-                    <h1 className='page-header'>Experiences</h1>
+                    <h1 className='page-header'>Logistics</h1>
                     <FormControl component='fieldset'>
                         <FormLabel component='legend' className='legends'>Can you help with transportation?</FormLabel>
                         <RadioGroup row required defaultValue={ this.props.isFirstTimer } onChange= { this.props.handleChange('canDrive') }>

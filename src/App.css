@@ -42,24 +42,39 @@ Form {
 }
 
 .input-fields {
-    margin-left: 20px;
-    margin-right: 15px;
-    margin-bottom: 15px;
-}
-
-.page-header {
-    margin-top: 30px; 
-    margin-left: 20px;  
-    font-size: 32px; 
+    margin-left: 96px;
+    margin-right: 10px;
 }
 
 
-.legends {
-    margin-left: 16px;
+
+.radio-wrapper {
+    margin-left: 270px;
     margin-bottom: 5px;
 }
 
+.group-wrapper {
+    margin-left: -15px;
+}
+
+.yesno-wrapper {
+    margin-left: 190px;
+}
+
 .application-header {
-    background: #6D49FF;
-    color: #FFFF;
+    background: #FFFF !important;
+    
+}
+
+.appbar-title {
+    color: #6D49FF !important;
+    font-size: medium;
+    margin-left: 16px;
+}
+
+.form-header {
+    color: #6D49FF !important;
+    font-size: x-large;
+    margin-top: 54px;
+    margin-left: 78px;
 }
