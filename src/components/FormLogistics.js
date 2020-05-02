@@ -24,38 +24,38 @@ class FormLogistics extends React.Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
-                    <Toolbar className='application-header'>
-                        <ToolbarTitle text='Application'/>
-                    </Toolbar>
-                    <h1 className='page-header'>Logistics</h1>
-                    <FormControl component='fieldset'>
-                        <FormLabel component='legend' className='legends'>Can you help with transportation?</FormLabel>
-                        <RadioGroup row required defaultValue={ this.props.isFirstTimer } onChange= { this.props.handleChange('canDrive') }>
-                            <FormControlLabel value={ true } control={<Radio />} label="Yes" labelPlacement='start'/>
-                            <FormControlLabel value={ false } control={<Radio />} label="No" labelPlacement='start'/>
-                        </RadioGroup>
-                    </FormControl>
+                    <h1 className='form-header'>Logistics</h1>
                     <br/>
-                    <TextField 
-                        floatingLabelText='Do you require any accomodations?'
-                        defaultValue={this.props.accomodations}
-                        onChange={this.props.handleChange('accomodations')}
-                        className='input-fields'
-                        variant='filled' 
-                        id='filled-size-normal filled-full-width' 
-                    />
-                    
+                    <div className='row'>
+                        <div className='driver-wrapper'>
+                            <FormControl component='fieldset'>
+                                <FormLabel component='legend' className='legends'>Could you use help with transporation?</FormLabel>
+                                <RadioGroup row required className='group-wrapper' defaultValue={ this.props.canDrive } onChange= { this.props.handleChange('canDrive') }>
+                                    <FormControlLabel value="yes" control={<Radio />} label="Yes" labelPlacement='start'/>
+                                    <FormControlLabel value="no" control={<Radio />} label="No" labelPlacement='start'/>
+                                </RadioGroup>
+                            </FormControl>
+                        </div>
+                    </div>
+                    <br/>
+                    <div className='row'>
+                        <TextField 
+                            floatingLabelText="Do you need any accomodations?"
+                            className='input-fields' 
+                            onChange={ this.props.handleChange('accomodations') }
+                            defaultValue={ this.props.accomodations }
+                        />
+                    </div>
                     <br/>
                     <RaisedButton 
-                        label='Previous'
-                        primary={ true }
+                        label='Prev'
                         style={ styles.button }
-                        onClick={ this.return }
+                        onClick={this.return}
                     />
                     <RaisedButton 
-                        label='Submit'
-                        primary={ true }
+                        label='Next'
                         style={ styles.button }
+                        onClick={this.continue}
                     />
                 </React.Fragment>
             </MuiThemeProvider>
@@ -65,7 +65,8 @@ class FormLogistics extends React.Component {
 
 const styles = {
     button: {
-        margin: 15
+        marginTop: "15px",
+        marginLeft: "80px",
     }
 }
 

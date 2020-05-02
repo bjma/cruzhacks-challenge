@@ -12,7 +12,7 @@ class FormDemographics extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            renderCollegeAffiliation: false
+            showComponent: false
         }
     }
 
@@ -21,10 +21,11 @@ class FormDemographics extends React.Component {
         this.props.nextPage();
     }
 
-    handelCheck = e => {
+    handleCheck = e => {
         if (e.target.value === "yes") {
-            this.setState({renderCollegeAffiliation: true})
-            console.log(this.state[0])
+            this.setState({ showComponent: true});
+        } else {
+            this.setState({ showComponent: false});
         }
     }
 
@@ -84,7 +85,7 @@ class FormDemographics extends React.Component {
                             defaultValue={ this.props.gradYear }
                             style={{width: 160}}
                         />
-                        <div className='yesno-wrapper'>
+                        <div className='student-wrapper'>
                             <FormControl component='fieldset'>
                                 <FormLabel component='legend' className='legends'>UCSC Student?</FormLabel>
                                 <RadioGroup row required className='group-wrapper' defaultValue={ this.props.isStudent } onChange= { this.handleCheck }>
@@ -93,18 +94,26 @@ class FormDemographics extends React.Component {
                                 </RadioGroup>
                             </FormControl>
                         </div>
-                        {this.renderCollegeAffiliation === "yes" && (
-                             <FormControl >
-                                <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                                <Select
-                                    defaultValue={this.props.collegeAffiliation}
-                                    onChange={this.props.handleChange('collegeAffiliation')}
-                                >
+                        { this.state.showComponent && (
+                             <div className='ca-wrapper'>
+                                 <FormControl >
+                                    <InputLabel>College Affiliation</InputLabel>
+                                    <Select
+                                        onChange={ this.props.handleChange('collegeAffiliation ')}
+                                        defaultValue={ this.props.collegeAffiliation }
+                                        style={{width:"230px"}}
+                                    >
+                                    <MenuItem value={'c10'}>College Ten</MenuItem>
+                                    <MenuItem value={'c9'}>College Nine</MenuItem>
                                     <MenuItem value={'crown'}>Crown</MenuItem>
-                                    <MenuItem value={'c9/10'}>College 9/10</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                </Select>
-                           </FormControl>
+                                    <MenuItem value={'merrill'}>Merrill</MenuItem>
+                                    <MenuItem value={'kresge'}>Kresge</MenuItem>
+                                    <MenuItem value={'porter'}>Porter</MenuItem>
+                                    <MenuItem value={'rcc'}>Rachel Carson</MenuItem>
+                                    <MenuItem value={'ooooakes'}>Oakes</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>  
                         )}
                     </div>
                     <br/>

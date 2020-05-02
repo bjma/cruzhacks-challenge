@@ -57,9 +57,18 @@ Form {
     margin-left: -15px;
 }
 
-.yesno-wrapper {
+.student-wrapper {
     margin-left: 190px;
 }
+
+.driver-wrapper {
+    margin-left: 94px;
+}
+
+.ca-wrapper {
+    margin-left: 120px;
+}
+
 
 .application-header {
     background: #FFFF !important;

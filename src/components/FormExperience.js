@@ -24,37 +24,38 @@ class FormExperience extends React.Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
-                    <Toolbar className='application-header'>
-                        <ToolbarTitle text='Application'/>
-                    </Toolbar>
-                    <h1 className='page-header'>Experiences</h1>
-                    <FormControl component='fieldset'>
-                        <FormLabel component='legend' className='legends'>First Hackathon?</FormLabel>
-                        <RadioGroup row required defaultValue={ this.props.isFirstTimer } onChange= { this.props.handleChange('isFirstTimer') }>
-                            <FormControlLabel value={ true } control={<Radio />} label="Yes" labelPlacement='start'/>
-                            <FormControlLabel value={ false } control={<Radio />} label="No" labelPlacement='start'/>
-                        </RadioGroup>
-                    </FormControl>
+                    <h1 className='form-header'>Experiences</h1>
                     <br/>
-                    <TextField 
-                        floatingLabelShrinkStyle='WHy do you want to participate? (500 words)'
-                        defaultValue={this.props.hackerStatement}
-                        onChange={this.props.handleChange('hackerStatement')}
-                        className='input-fields'
-                        variant='filled' 
-                        id='filled-size-normal filled-full-width' 
-                    />
-                    
+                    <div className='row'>
+                        <div className='driver-wrapper'>
+                            <FormControl component='fieldset'>
+                                <FormLabel component='legend' className='legends'>First Hackathon?</FormLabel>
+                                <RadioGroup row required className='group-wrapper' defaultValue={ this.props.isStudent } onChange= { this.handleCheck }>
+                                    <FormControlLabel value="yes" control={<Radio />} label="Yes" labelPlacement='start'/>
+                                    <FormControlLabel value="no" control={<Radio />} label="No" labelPlacement='start'/>
+                                </RadioGroup>
+                            </FormControl>
+                        </div>
+                    </div>
+                    <br/>
+                    <div className='row'>
+                        <TextField 
+                            floatingLabelText="Why do you want to participate? (500 words)"
+                            className='input-fields' 
+                            onChange={ this.props.handleChange('hackerStatement') }
+                            defaultValue={ this.props.hackerStatement }
+                            multiline
+                            rows={4}
+                        />
+                    </div>
                     <br/>
                     <RaisedButton 
-                        label='Previous'
-                        primary={ true }
+                        label='Prev'
                         style={ styles.button }
-                        onClick={ this.return }
+                        onClick={this.return}
                     />
                     <RaisedButton 
                         label='Next'
-                        primary={ true }
                         style={ styles.button }
                         onClick={this.continue}
                     />
@@ -66,7 +67,8 @@ class FormExperience extends React.Component {
 
 const styles = {
     button: {
-        margin: 15
+        marginTop: "15px",
+        marginLeft: "80px",
     }
 }
 
