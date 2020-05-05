@@ -15,7 +15,7 @@ npm install
 
 Then run it in your local environment:
 ```
-npm run
+npm start
 ```
 
 Now, you should be able to view the project on `https://localhost/3000`
