@@ -6,9 +6,8 @@ class Announcements extends React.Component {
         code: 0,
         count: 0,
         results: [],
-        time: [],
-        text: [],
         events: [],
+        html: '',
     }
 
     // ref: https://stackoverflow.com/questions/43262121/trying-to-use-fetch-and-pass-in-mode-no-cors/43268098
@@ -22,48 +21,27 @@ class Announcements extends React.Component {
         let info = Object.keys(data.results);
         this.setState({code: data.code, count: data.count, results: info});
         // retrive text and time
-        let timeArr = [];
-        let textArr = []
+        let htmlToParse = "<div class=\"events-wrapper card-row\">"
+        
         for (let i = 0; i < this.state.count; i++) {
             let key = this.state.results[i];
-            timeArr[i] = data.results[key].time;
-            textArr[i] = data.results[key].text;
+            htmlToParse += "<div class=\"event-card card-column\">";
+            htmlToParse += "<div class=\"card-container\">";
+            htmlToParse += "<p>" + data.results[key].time + "</p>";
+            htmlToParse += "<h6>" + data.results[key].text + "</h6>"
+            htmlToParse += "</div>";
+            htmlToParse += "</div>";
+
         }
-        this.setState({time: timeArr, text: textArr});
-        console.log(this.state);
+        htmlToParse += "</div>"
+        this.setState({html: htmlToParse});
     }
 
     render() {
         return (
             <MuiThemeProvider>
                 <h1 className="announcement-title">Announcements</h1>
-                <div className="events-wrapper card-row">
-                    <div className="event-card card-column">
-                        <div className='card-container'>
-                            <p>{this.state.time[0]}</p>
-                            <h6>{this.state.text[0]}</h6>
-                        </div>
-                    </div>
-                    <div className="event-card card-column">
-                        <div className='card-container'>
-                            <p>{this.state.time[1]}</p>
-                            <h6>{this.state.text[1]}</h6>
-                        </div>
-                    </div>
-                    <div className="event-card card-column">
-                        <div className='card-container'>
-                            <p>{this.state.time[2]}</p>
-                            <h6>{this.state.text[2]}</h6>
-                        </div>
-                    </div>
-                    <div className="event-card card-column">
-                        <div className='card-container'>
-                            <p>{this.state.time[3]}</p>
-                            <h6>{this.state.text[3]}</h6>
-                        </div>
-                    </div>
-                </div>
-                
+                <div dangerouslySetInnerHTML={{ __html: this.state.html }} />
             </MuiThemeProvider>
         )
     }
