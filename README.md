@@ -1,5 +1,5 @@
 # CruzHacks Frontend Challenge :bulb:
-This project was made for [CruzHack's frontend technical challenge](https://github.com/CruzHacks/cruzhacks-organizer-challenges) for their engineering team, built using **React.js** and **MaterialUI**.
+This project was made for [CruzHack's frontend technical challenge](https://github.com/CruzHacks/cruzhacks-organizer-challenges) for their engineering team application, built using **React.js** and **MaterialUI**.
 
 
 ## Running the project :rocket:
