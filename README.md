@@ -8,9 +8,14 @@ To start, simply clone this repo in your preferred directory:
 git clone https://github.com/bjma/cruzhacks-event-dashboard
 ```
 
-To run the project, run `npm` in the project directory:
+To run the project, first install `npm` in the project directory:
 ```
-npm start
+npm install
+```
+
+Then run it in your local environment:
+```
+npm run
 ```
 
 Now, you should be able to view the project on `https://localhost/3000`
