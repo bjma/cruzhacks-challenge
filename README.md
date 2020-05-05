@@ -2,7 +2,7 @@
 This project was made for [CruzHack's frontend technical challenge](https://github.com/CruzHacks/cruzhacks-organizer-challenges), built using **React.js** and **Bootstrap**.
 
 
-## Running the project
+## Running the project :rocket:
 To start, simply clone this repo in your preferred directory:
 ```
 git clone https://github.com/bjma/cruzhacks-event-dashboard
