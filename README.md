@@ -5,7 +5,7 @@ This project was made for [CruzHack's frontend technical challenge](https://gith
 ## Running the project :rocket:
 To start, simply clone this repo in your preferred directory:
 ```
-git clone https://github.com/bjma/cruzhacks-event-dashboard
+git clone https://github.com/bjma/cruzhacks-challenge
 ```
 
 To run the project, first install `npm` in the project directory:
